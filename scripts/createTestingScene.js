@@ -43,6 +43,11 @@ var createTestingScene = function(canvas, engine) {
     risingPanel.addToPointerManager('posy');
     risingPanel.panel.material = window.myMats.bluePlanet;
 
+    var guideText = UI3D.MakeTextPlane('guideText', scene, 15, 10, '^ click me ^', 200);
+    guideText.position.y = Cycle.UNDERBLOCKSIZE()/2 + .1;
+    guideText.position.z = -3;
+    guideText.rotation.x = Math.PI/2;
+
     var slider = UI3D.MakePuckSlider('puckSlider', scene, 3, 1, risingPanel.panel, [0,10], 5, 18, 300, GF.DoNothing);
     slider.mesh.material = window.myMats.lightBlue;
     risingPanel.addSlider(slider, [0, 1]);
